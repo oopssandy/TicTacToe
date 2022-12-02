@@ -56,7 +56,7 @@ for now in round :
                         break
         
         elif i%2 == 1: 
-            備註: 以下為"x"的判斷與"o"雷同
+            備註: 以下為"x"的判斷與"o"雷同>
 
             備註: 以下為"AI"的輸入下棋
             list_AI=[]
