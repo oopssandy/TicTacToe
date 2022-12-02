@@ -1,9 +1,12 @@
+ 
+ import json
+ import random
+
 round=3
 for now in round :
     size=int(input("請輸入棋盤單邊尺寸,EX:3*3->3"))
-    import random
     "玩家A"=input("玩家o->")
-    "玩家B"=input("玩家x->")
+    "玩家B"=input("玩家x->") 如果是V.S電腦(電腦一定是"x")
     x="oxoxxoxo..."
     return "先下的玩家是->", random.choice(x)
 
@@ -11,7 +14,7 @@ for now in round :
     x_step=[]
 
     for step in range(size**2):
-        if i == 0 or i%2 ==0:
+        if step == 0 or step%2 ==0:
             step=input("o您要下的(x.y)為")
             if "o_step" == "quit" or "Quit" or "QUIT":
                 return "玩家x +=1"
@@ -54,6 +57,18 @@ for now in round :
         
         elif i%2 == 1: 
             備註: 以下為"x"的判斷與"o"雷同
+
+            備註: 以下為"AI"的輸入下棋
+            list_AI=[]
+            one=random.randrange(size)
+            two=random.randrange(size)
+            list=[one,two]
+            while list in list_A or list_AI:
+                one=random.randrange(size)
+                two=random.randrange(size)
+                list=[one,two]
+                list_AI.append(list)=[x,y]  # type=int
+
         
 if "玩家o"> "玩家x" is True:
     return "winner is 玩家o !!"
@@ -67,7 +82,7 @@ if "玩家o"> "玩家x" is True:
 
 # 比賽紀錄以json檔紀錄
 
-import json
+
 
 
 jsonFile = json.load(open('/Users/user/Documents/Work/Python/OX賽式紀錄.json','r'))
@@ -86,4 +101,5 @@ print(x)
 # y={}
 # y["fil"]=x
 # json.dump(y,open('/Users/user/Documents/Work/Python/OX賽式紀錄.json','w'))
+
 
